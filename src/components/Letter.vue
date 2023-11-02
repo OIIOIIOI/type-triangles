@@ -5,6 +5,7 @@ import {onBeforeUpdate, onMounted, ref} from "vue";
 
 const props = defineProps({
 	letter: String,
+	palette: Number,
 });
 
 const index = ref(0);
@@ -28,7 +29,8 @@ onBeforeUpdate(convertLetter);
 			 v-for="row in letters[index]"
 			 class="text-[0] flex">
 			<Cell v-for="cell in row"
-				  :corner="cell"></Cell>
+				  :corner="cell"
+				  :palette="palette"></Cell>
 		</div>
 	</div>
 </template>
